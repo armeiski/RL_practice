@@ -1,0 +1,62 @@
+<mujoco model="frog">
+    <compiler angle="radian" />
+    <asset>
+        <mesh name="base-link" file="meshes/base-link.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-front-up" file="meshes/left-front-up.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-front-down" file="meshes/left-front-down.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-back-up" file="meshes/left-back-up.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-back-down" file="meshes/left-back-down.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-front-up" file="meshes/right-front-up.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-back-up" file="meshes/right-back-up.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-back-down" file="meshes/right-back-down.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-front-down" file="meshes/right-front-down.stl" scale="0.001 0.001 0.001" />
+    </asset>
+    <worldbody>
+        <light directional="true" pos="-0.5 0.5 3" dir="0 0 -1" />
+        <geom pos="0 0 0" size="1 1 1" type="plane" rgba="1 0.83 0.61 0.5" />
+        <body name="base-link" pos="0.0 0.0 0.0" euler="-0.0 0.0 -0.0">
+            <geom name="base-link_geom" type="mesh" mesh="base-link" pos="0 0 0" euler="0 0 0" />
+            <inertial mass="0.10999864928459796" pos="-0.0026207604634829068 0.0 0.018351499677090002" fullinertia="7.340039646891687e-06 1.4893708283392455e-05 1.4902103626545398e-05 -1.0318856880076055e-19 -4.828087799349512e-20 7.717249950189853e-17" />
+            <body name="left-front-up" pos="0.00039576467877940226 0.004000000000000002 -0.012027001763435732" euler="-0.0 0.0 -0.0">
+                <joint name="base-link_left-front-up" type="hinge" axis="0.0 -1.0 0.0" pos="-0.012516764678779402 -0.015000000000000001 0.025383001763435734" />
+                <geom name="left-front-up_geom" type="mesh" mesh="left-front-up" pos="0 0 0" euler="0 0 0" />
+                <inertial mass="0.002776807258817609" pos="-0.012516525142262215 -0.012500000149011613 0.017989091340926484" fullinertia="5.2761584057436437e-08 5.2673920287642635e-08 1.1482366475279717e-08 -1.0587911840678754e-22 0.0 2.6469779601696886e-23" />
+                <body name="left-front-down" pos="0.0 2.220446049250313e-18 0.006000000000000001" euler="-0.0 0.0 -0.0">
+                    <joint name="left-front-up_left-front-down" type="hinge" axis="0.0 -1.0 0.0" pos="-0.012516764678779402 -0.012500000000000004 0.006883001763435731" />
+                    <geom name="left-front-down_geom" type="mesh" mesh="left-front-down" pos="0 0 0" euler="0 0 0" />
+                    <inertial mass="0.0011165908230702513" pos="-0.01251661432005264 -0.012500000149011615 0.002091237411401902" fullinertia="5.511645420592039e-09 5.712175837701653e-09 4.695817732338336e-09 1.3234889800848443e-23 4.586299848312799e-13 0.0" />
+                </body>
+            </body>
+            <body name="left-back-up" pos="-0.0011207605752415262 0.005999999999999998 -0.004644016507280488" euler="-0.0 0.0 -0.0">
+                <joint name="base-link_left-back-up" type="hinge" axis="0.0 -1.0 0.0" pos="0.007999760575241526 -0.016999999999999998 0.01800001650728049" />
+                <geom name="left-back-up_geom" type="mesh" mesh="left-back-up" pos="0 0 0" euler="0 0 0" />
+                <inertial mass="0.006848741329917298" pos="0.008026393335626596 -0.013500000149011614 0.010909266012042623" fullinertia="1.4111432227979106e-07 1.570250145616731e-07 7.184207980953931e-08 1.0587911840678754e-22 -1.6023981133610973e-11 3.705769144237564e-22" />
+                <body name="left-back-down" pos="0.0 2.220446049250313e-18 0.004" euler="-0.0 0.0 -0.0">
+                    <joint name="left-back-up_left-back-down" type="hinge" axis="0.0 -1.0 0.0" pos="0.008025760575241526 -0.013500000000000002 0.003551016507280488" />
+                    <geom name="left-back-down_geom" type="mesh" mesh="left-back-down" pos="0 0 0" euler="0 0 0" />
+                    <inertial mass="0.005555232688979731" pos="0.00802604380065264 -0.013500000149011608 -0.005559494292576267" fullinertia="8.400236336369896e-08 1.0165161030221345e-07 6.228937278740522e-08 0.0 2.6469779601696886e-23 -1.5881867761018131e-22" />
+                </body>
+            </body>
+            <body name="right-back-up" pos="-0.0011207605752415262 0.021000000298023225 -0.004644016656292107" euler="-0.0 0.0 -0.0">
+                <joint name="base-link_right-back-up" type="hinge" axis="0.0 1.0 0.0" pos="0.007999760575241526 -0.010000000298023226 0.018000016656292108" />
+                <geom name="right-back-up_geom" type="mesh" mesh="right-back-up" pos="0 0 0" euler="0 0 0" />
+                <inertial mass="0.006848741329917298" pos="0.008026393335626596 -0.013500000149011614 0.010909266012042625" fullinertia="1.4111432227979095e-07 1.5702501456167288e-07 7.184207980953931e-08 0.0 -1.6023981133505094e-11 3.705769144237564e-22" />
+                <body name="right-back-down" pos="0.0 0.0 0.004" euler="-0.0 0.0 -0.0">
+                    <joint name="right-back-up_right-back-down" type="hinge" axis="0.0 -1.0 0.0" pos="0.008025760575241526 -0.017000000298023225 0.0035510166562921068" />
+                    <geom name="right-back-down_geom" type="mesh" mesh="right-back-down" pos="0 0 0" euler="0 0 0" />
+                    <inertial mass="0.005555232688979731" pos="0.00802604380065264 -0.01350000014901161 -0.005559494292576267" fullinertia="8.400236336369885e-08 1.0165161030221345e-07 6.228937278740522e-08 0.0 2.6469779601696886e-23 -2.117582368135751e-22" />
+                </body>
+            </body>
+            <body name="right-front-up" pos="0.00039576467877940004 0.021000000298023225 -0.012027001912447358" euler="-0.0 0.0 -0.0">
+                <joint name="base-link_right-front-up" type="hinge" axis="0.0 1.0 0.0" pos="-0.0125167646787794 -0.010000000298023226 0.025383001912447356" />
+                <geom name="right-front-up_geom" type="mesh" mesh="right-front-up" pos="0 0 0" euler="0 0 0" />
+                <inertial mass="0.002776807258817609" pos="-0.012516525142262215 -0.012500000149011613 0.017989091340926484" fullinertia="5.2761584057436384e-08 5.2673920287642635e-08 1.1482366475279717e-08 -5.293955920339377e-23 0.0 2.6469779601696886e-23" />
+                <body name="right-front-down" pos="0.0 0.0 0.006000000000000001" euler="-0.0 0.0 -0.0">
+                    <joint name="right-front-up_right-front-down" type="hinge" axis="0.0 -1.0 0.0" pos="-0.0125167646787794 -0.015000000298023225 0.006883001912447356" />
+                    <geom name="right-front-down_geom" type="mesh" mesh="right-front-down" pos="0 0 0" euler="0 0 0" />
+                    <inertial mass="0.0011165908230702513" pos="-0.01251661432005264 -0.012500000149011615 0.002091237411401902" fullinertia="5.511645420592039e-09 5.71217583770168e-09 4.695817732338389e-09 3.970466940254533e-23 4.586299848577497e-13 0.0" />
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>
